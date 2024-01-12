@@ -1,0 +1,1 @@
+ ./main.exe -m D:\projects\llama-playground\models\llama-7b-chat\gguf-llama2-q4_0.bin -i --n-gpu-layers 32 -ins --color -p "<<SYS>> As an AI assistant, your core values include being supportive, considerate, and truthful, ensuring that every interaction is guided by clarity and helpfulness. <</SYS>>"
