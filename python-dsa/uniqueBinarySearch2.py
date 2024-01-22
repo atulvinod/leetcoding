@@ -1,3 +1,6 @@
+'''
+#IMPORTANT
+'''
 from functools import lru_cache
 from typing import Optional, List
 
@@ -6,6 +9,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+
 
 class Solution:
     def generateTrees(self, n: int) -> List[Optional[TreeNode]]:
