@@ -1,12 +1,3 @@
-
-class Node:
-    def __init__(self, url: str, next=None, prev=None) -> None:
-        self.url = url
-        self.next = next;
-        self.prev = prev
-        
-        
-
 class ListNode:
     def __init__(self, x):
         self.val = x
