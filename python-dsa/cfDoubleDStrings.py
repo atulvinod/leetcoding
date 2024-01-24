@@ -5,8 +5,8 @@ def solve(strings):
 , key= lambda x : len(x[0]))
     
     for i in range(len(strings)-1, -1, -1):
-        for k in range(len(strings[i][0])):
-            (string, index) = strings[i]
+        (string, index) = strings[i]
+        for k in range(len(string)):
             a = string[0:k+1]
             b = string[k+1:]
             if a in string_set and b in string_set:
