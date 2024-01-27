@@ -28,7 +28,7 @@ class FenwickTree:
         bitTree = [0]*(len(array) + 1)
         
         def update(index, delta):
-            while index <= len(bitTree):
+            while index < len(bitTree):
                 bitTree[index] += delta
                 
                 # by using this operation, we also update the indexes which 
@@ -56,4 +56,5 @@ class FenwickTree:
     
 array = [1,2,3,4,5,6,7,8,9,10]
 fwt = FenwickTree(array)
+# based on 1 index
 print(fwt.query(1,2))
