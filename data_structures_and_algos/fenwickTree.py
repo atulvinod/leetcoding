@@ -1,4 +1,4 @@
-'''
+"""
 Fenwick trees allow us to efficiently compute the sum for a range (l,r)
 Fenwick tree uses bit array to store this range data
 
@@ -12,10 +12,19 @@ if we set the last bit of number 'i'
 
 > bit[i] stores data from j + 1 -> 1, where j is the number we get after removing last bit of i
 
-> to update a value in a fenwick tree, we use the delta to update the index (original value at ith index at main array - updated value) to propagate the change, as it will modify the subsequent dependent ranges
+> to update a value in a fenwick tree, we use the delta to update the index (original value at ith index at main array - updated value) to propagate the change, as it will modify the subsequent dependent ranges.
 
-'''
+The runtime complexity of various operations in the Fenwick Tree are as follows:
 
+Construction: Building a Fenwick Tree from an array of n elements takes O(n * log n) time. This is because constructing a Fenwick Tree involves performing update operations on each element, and the update operation itself takes O(log n) time.
+
+Point Query (Prefix Sum): Querying the prefix sum up to index i in the array takes O(log n) time.
+
+Range Update (Adding a Value to a Range): Updating a range [a, b] in the array by adding a value to each element in the range takes O(log n) time.
+
+Point Update (Updating a Single Element): Updating a single element at index i in the array takes O(log n) time.
+
+"""
 
 class FenwickTree:
     
@@ -53,7 +62,7 @@ class FenwickTree:
             return ans
         
         return sum(r) - sum(l-1) 
-    
+
 array = [1,2,3,4,5,6,7,8,9,10]
 fwt = FenwickTree(array)
 # based on 1 index
