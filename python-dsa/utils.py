@@ -24,6 +24,36 @@ def linkedListBuilder(array):
     return head
 
 
+def treeBuilder(array):
+    map = dict()
+    for i in range(len(array)):
+        if array[i] is None:
+            continue
+
+        left = 2 * i + 1
+        right = 2 * i + 2
+        root = None
+
+        if map[i] is None:
+            map[i] = TreeNode(array[i])
+
+        root = map[i]
+        if left <= len(array) - 1 and array[left] is not None:
+            left_node = None
+            if map[left] is None:
+                map[left] = TreeNode(array[left])
+            left_node = map[left]
+            root.left = left_node
+
+        if right <= len(array) - 1 and array[right] is not None:
+            right_node = None
+            if map[right] is None:
+                map[right] = TreeNode(array[right])
+            right_node = map[right]
+            root.right = right_node
+    return map[0]
+
+
 def printLinkedList(head: ListNode):
     while head is not None:
         print(head.val)
