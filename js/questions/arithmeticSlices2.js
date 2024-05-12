@@ -1,3 +1,6 @@
+/**
+ * https://leetcode.com/problems/arithmetic-slices-ii-subsequence/description/
+ */
 let result = 0;
 let hashMap = {};
 

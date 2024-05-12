@@ -1,6 +1,8 @@
 import queue
 from typing import Optional
-
+"""
+https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/description/
+"""
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
