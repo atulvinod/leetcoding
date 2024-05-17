@@ -7,25 +7,25 @@ class Solution:
         self, root: Optional[TreeNode], target: int
     ) -> Optional[TreeNode]:
 
-        def solve(node: TreeNode):
+        def processTree(node: TreeNode):
             if node is None:
                 return True
             if node.left is None and node.right is None:
                 return target == node.val
 
-            leftResult = solve(node.left)
-            rightResult = solve(node.right)
+            doDeleteLeft = processTree(node.left)
+            doDeleteRight = processTree(node.right)
 
-            if leftResult:
+            if doDeleteLeft:
                 node.left = None
 
-            if rightResult:
+            if doDeleteRight:
                 node.right = None
 
-            return leftResult and rightResult and node.val == target
+            return doDeleteLeft and doDeleteRight and node.val == target
 
-        result = solve(root)
-        if result:
+        doDeleteRoot = processTree(root)
+        if doDeleteRoot:
             return None
         return root
 
